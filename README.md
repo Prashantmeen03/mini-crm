@@ -2,6 +2,10 @@
 
 A simple Customer Relationship Management (CRM) application built with **React**, **Node.js**, **Express**, and **PostgreSQL**. 
 
+## 🌍 Live Demo
+* **Frontend:** [Link to your deployed frontend]
+* **Backend API:** [Link to your deployed backend]
+
 This application allows users to manage their sales leads efficiently by providing features to add new leads, view a list of all leads, update the status of existing leads, and delete leads.
 
 ## 🚀 Technologies Used
