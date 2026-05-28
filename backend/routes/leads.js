@@ -6,7 +6,7 @@ const {
   getLeads,
   updateLead,
   deleteLead
-} = require('../controllers/leadController');
+} = require('../controllers/leadcontroller');
 
 router.post('/', addLead);
 router.get('/', getLeads);
