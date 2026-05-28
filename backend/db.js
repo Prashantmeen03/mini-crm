@@ -1,11 +1,10 @@
 const { Pool } = require('pg');
 
+const isProduction = process.env.NODE_ENV === 'production';
+
 const pool = new Pool({
-    user: 'postgres',
-    host: 'localhost',
-    database: 'mini crm',
-    password: '12345678',
-    port: 5432,
+    connectionString: process.env.DATABASE_URL || 'postgresql://postgres:12345678@localhost:5432/mini crm',
+    ssl: isProduction ? { rejectUnauthorized: false } : false
 });
 
 module.exports = pool;

@@ -3,6 +3,8 @@ import axios from "axios";
 
 import "./App.css";
 
+const API_BASE_URL = process.env.REACT_APP_API_URL || "http://localhost:5000";
+
 function App() {
   const [leads, setLeads] = useState([]);
 
@@ -15,7 +17,7 @@ function App() {
   const fetchLeads = async () => {
     try {
       const res = await axios.get(
-        "http://localhost:5000/api/leads"
+        `${API_BASE_URL}/api/leads`
       );
 
       setLeads(res.data);
@@ -40,7 +42,7 @@ function App() {
 
     try {
       await axios.post(
-        "http://localhost:5000/api/leads",
+        `${API_BASE_URL}/api/leads`,
         formData
       );
 
@@ -59,7 +61,7 @@ function App() {
   const updateStatus = async (id, status) => {
     try {
       await axios.put(
-        `http://localhost:5000/api/leads/${id}`,
+        `${API_BASE_URL}/api/leads/${id}`,
         { status }
       );
 
@@ -72,7 +74,7 @@ function App() {
   const deleteLead = async (id) => {
     try {
       await axios.delete(
-        `http://localhost:5000/api/leads/${id}`
+        `${API_BASE_URL}/api/leads/${id}`
       );
 
       fetchLeads();
